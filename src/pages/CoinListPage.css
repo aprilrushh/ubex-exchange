@@ -1,0 +1,190 @@
+/* src/pages/ChartPage.css */
+.chart-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.chart-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 차트 페이지 헤더 */
+.chart-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.chart-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 차트 컨테이너 */
+.chart-wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* 차트 상단 정보 */
+.chart-info {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coin-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.coin-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.price-change {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price-change.positive {
+  color: #d60000;
+  background-color: #ffe8e6;
+}
+
+.price-change.negative {
+  color: #0051c7;
+  background-color: #e6f0ff;
+}
+
+/* 차트 도구 모음 */
+.chart-tools {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* 차트 영역 */
+.chart-area {
+  height: 500px;
+  position: relative;
+}
+
+/* 로딩 및 에러 상태 */
+.chart-loading,
+.chart-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.chart-loading {
+  color: #666;
+}
+
+.chart-error {
+  color: #d60000;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .chart-content {
+    padding: 15px;
+  }
+  
+  .chart-tools {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-page-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .chart-title {
+    font-size: 20px;
+  }
+  
+  .chart-area {
+    height: 350px;
+  }
+  
+  .chart-tools {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-content {
+    padding: 10px;
+  }
+  
+  .chart-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .coin-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .chart-area {
+    height: 300px;
+  }
+}
+
+/* 추가적인 유틸리티 클래스 */
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
