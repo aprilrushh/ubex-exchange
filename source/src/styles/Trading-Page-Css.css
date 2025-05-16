@@ -1,0 +1,121 @@
+/* src/styles/TradingPage.css  15-05-2025 11:59pm */
+/* TradingPage.css - 거래 페이지 관련 스타일 */
+
+.trading-page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+.chart-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.order-section {
+  width: 320px;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* 주문 탭 */
+.order-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-tab {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--secondary-text);
+  background: none;
+  transition: all 0.2s;
+}
+
+.order-tab.active {
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+.order-tab.active.buy-tab {
+  border-bottom: 2px solid var(--red-price);
+  color: var(--red-price);
+}
+
+.order-tab.active.sell-tab {
+  border-bottom: 2px solid var(--green-price);
+  color: var(--green-price);
+}
+
+/* 주문 양식 */
+.order-form {
+  padding: 20px;
+}
+
+.price-input-wrapper,
+.amount-input-wrapper,
+.total-input-wrapper {
+  position: relative;
+}
+
+.currency-unit {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+.order-button {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-top: 20px;
+}
+
+.buy-button {
+  background-color: var(--red-price);
+}
+
+.buy-button:hover {
+  background-color: #e64858;
+}
+
+.sell-button {
+  background-color: var(--green-price);
+}
+
+.sell-button:hover {
+  background-color: #0055c4;
+}
+
+/* 반응형 */
+@media (max-width: 1100px) {
+  .trading-page {
+    flex-direction: column;
+  }
+  
+  .order-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-section {
+    margin-bottom: 20px;
+  }
+}

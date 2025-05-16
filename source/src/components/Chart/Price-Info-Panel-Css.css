@@ -1,0 +1,179 @@
+/* src/styles/PriceInfoPanel.css  16-05-2025 12:01am */
+/* PriceInfoPanel.css - 가격 정보 패널 스타일 */
+
+.price-info-panel {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.symbol-info {
+  flex: 0 0 auto;
+  margin-right: 24px;
+}
+
+.coin-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.pair-currency {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-text);
+  margin-left: 4px;
+}
+
+.market-info {
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+.market-label {
+  margin-right: 5px;
+}
+
+.divider {
+  margin: 0 5px;
+  color: var(--border);
+}
+
+.price-section {
+  flex: 1;
+  display: flex;
+}
+
+.current-price-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.currency {
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--secondary-text);
+  margin-left: 5px;
+}
+
+.price-change {
+  display: flex;
+  align-items: center;
+}
+
+.change-value {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.price-details {
+  flex: 1;
+  max-width: 320px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: var(--secondary-text);
+  margin-bottom: 3px;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.external-price-references {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  min-width: 220px;
+}
+
+.exchange-reference {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.exchange-name {
+  width: 80px;
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+.exchange-price {
+  margin-right: 10px;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.exchange-usd-price {
+  font-size: 12px;
+  color: var(--light-text);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1100px) {
+  .price-info-panel {
+    flex-wrap: wrap;
+  }
+  
+  .symbol-info {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .external-price-references {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    flex-direction: row;
+  }
+  
+  .exchange-reference {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .price-section {
+    flex-direction: column;
+  }
+  
+  .price-details {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .current-price {
+    font-size: 24px;
+  }
+  
+  .price-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .external-price-references {
+    flex-direction: column;
+  }
+}

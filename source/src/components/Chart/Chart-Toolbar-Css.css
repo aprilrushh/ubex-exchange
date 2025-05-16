@@ -1,0 +1,117 @@
+/* src/styles/ChartToolbar.css  16-05-2025 12:02am */
+/* ChartToolbar.css - 차트 툴바 관련 스타일 */
+
+.chart-toolbar {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.time-range-selector {
+  display: flex;
+  margin-right: 20px;
+}
+
+.range-button {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.range-button.active {
+  color: white;
+  background-color: var(--primary-blue);
+}
+
+.range-button:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.chart-type-selector {
+  display: flex;
+  margin-right: 20px;
+}
+
+.type-button {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.type-button.active {
+  color: white;
+  background-color: var(--primary-blue);
+}
+
+.type-button:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.chart-options {
+  display: flex;
+}
+
+.option-button {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-button.active {
+  color: var(--primary-text);
+  background-color: var(--button-hover);
+}
+
+.option-button:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 800px) {
+  .chart-toolbar {
+    flex-wrap: wrap;
+  }
+  
+  .time-range-selector {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+  
+  .chart-type-selector,
+  .chart-options {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-toolbar {
+    padding: 8px 10px;
+  }
+  
+  .range-button,
+  .type-button,
+  .option-button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}

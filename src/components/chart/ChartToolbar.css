@@ -1,0 +1,144 @@
+/* ChartToolbar.css - 차트 툴바 스타일 */
+
+.chart-toolbar {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.toolbar-section {
+  margin-right: 30px;
+}
+
+.toolbar-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--secondary-text);
+}
+
+.drawing-tools {
+  display: flex;
+}
+
+.tool-button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tool-button.active {
+  background-color: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+.tool-button:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.indicators {
+  display: flex;
+}
+
+.indicator-dropdown {
+  position: relative;
+  margin-right: 10px;
+}
+
+.indicator-button {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.indicator-button:hover {
+  background-color: var(--button-hover);
+}
+
+.toolbar-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  min-width: 120px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none;
+}
+
+.indicator-dropdown:hover .toolbar-submenu {
+  display: block;
+}
+
+.submenu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--primary-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submenu-item:hover {
+  background-color: var(--button-hover);
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+  .chart-toolbar {
+    flex-wrap: wrap;
+  }
+  
+  .toolbar-section {
+    flex: 1 0 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .drawing-tools, 
+  .indicators {
+    flex-wrap: wrap;
+  }
+  
+  .tool-button, 
+  .indicator-dropdown {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .indicators {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .indicators::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}

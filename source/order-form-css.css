@@ -1,0 +1,216 @@
+/* OrderForm.css - 주문 양식 스타일 */
+
+.order-form {
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 주문 유형 탭 (매수/매도) */
+.order-type-tabs {
+  display: flex;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  background: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-button.buy {
+  color: var(--red-price);
+}
+
+.tab-button.sell {
+  color: var(--green-price);
+}
+
+.tab-button.active {
+  background-color: var(--input-background);
+}
+
+/* 가격 유형 탭 (지정가/시장가) */
+.price-type-tabs {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.price-type-button {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.price-type-button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+}
+
+.price-type-button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.price-type-button.active {
+  background-color: var(--button-hover);
+  color: var(--primary-text);
+  font-weight: 500;
+}
+
+/* 잔액 정보 */
+.balance-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.balance-label {
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+.balance-value {
+  font-weight: 500;
+}
+
+/* 입력 필드 */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+.input-with-addon {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-with-addon input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  background-color: var(--input-background);
+  color: var(--primary-text);
+  font-size: 15px;
+}
+
+.input-with-addon .addon {
+  padding: 0 15px;
+  font-size: 14px;
+  color: var(--secondary-text);
+  background-color: var(--panel);
+  border-left: 1px solid var(--border);
+}
+
+/* 퍼센트 버튼 */
+.percentage-buttons {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.percent-button {
+  flex: 1;
+  padding: 8px 0;
+  margin-right: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.percent-button:last-child {
+  margin-right: 0;
+}
+
+.percent-button:hover {
+  background-color: var(--button-hover);
+  color: var(--primary-text);
+}
+
+/* 주문 제출 버튼 */
+.order-submit-button {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.order-submit-button.buy {
+  background-color: var(--red-price);
+  color: white;
+}
+
+.order-submit-button.buy:hover {
+  background-color: #e6394e;
+}
+
+.order-submit-button.sell {
+  background-color: var(--green-price);
+  color: white;
+}
+
+.order-submit-button.sell:hover {
+  background-color: #0051c7;
+}
+
+.order-submit-button:disabled {
+  background-color: var(--border);
+  color: var(--secondary-text);
+  cursor: not-allowed;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .order-form {
+    padding: 15px;
+  }
+  
+  .tab-button, 
+  .price-type-button, 
+  .order-submit-button {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  
+  .percentage-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .percent-button {
+    flex: 1 0 40%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}

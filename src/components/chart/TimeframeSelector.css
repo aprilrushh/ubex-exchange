@@ -1,0 +1,49 @@
+/* TimeframeSelector.css - 시간 선택기 스타일 */
+
+.timeframe-selector {
+  display: flex;
+  background-color: var(--panel);
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.timeframe-button {
+  padding: 6px 12px;
+  margin-right: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--secondary-text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeframe-button:last-child {
+  margin-right: 0;
+}
+
+.timeframe-button:hover {
+  background-color: var(--button-hover);
+}
+
+.timeframe-button.active {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: white;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 576px) {
+  .timeframe-selector {
+    padding: 8px;
+  }
+  
+  .timeframe-button {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,199 @@
+/* CryptoList.css - 암호화폐 목록 컴포넌트 스타일 */
+
+.crypto-list {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.crypto-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.crypto-item:hover {
+  background-color: var(--button-hover);
+}
+
+.crypto-star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  margin-right: 8px;
+  color: var(--light-text);
+}
+
+.crypto-star.active {
+  color: #ffca28;
+}
+
+.crypto-info {
+  flex: 1;
+}
+
+.crypto-name-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.crypto-name {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.crypto-symbol {
+  font-size: 12px;
+  color: var(--light-text);
+}
+
+.crypto-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: var(--panel);
+}
+
+.crypto-data {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 120px;
+  text-align: right;
+}
+
+.crypto-price-container {
+  margin-right: 15px;
+}
+
+.crypto-price {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.crypto-change {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.crypto-change-value {
+  margin-left: 3px;
+}
+
+.crypto-volume {
+  font-size: 13px;
+  color: var(--secondary-text);
+  min-width: 90px;
+}
+
+/* 상승/하락 색상 */
+.price-up {
+  color: var(--red-price);
+}
+
+.price-down {
+  color: var(--green-price);
+}
+
+.price-neutral {
+  color: var(--primary-text);
+}
+
+/* 아이콘 */
+.arrow-up-icon,
+.arrow-down-icon {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.arrow-up-icon {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid var(--red-price);
+}
+
+.arrow-down-icon {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid var(--green-price);
+}
+
+/* 빈 상태 */
+.crypto-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--light-text);
+}
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+.empty-message {
+  margin-bottom: 10px;
+}
+
+.try-again-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.try-again-button:hover {
+  background-color: var(--primary-blue-dark);
+}
+
+/* 로딩 상태 */
+.crypto-list-loading {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-blue);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .crypto-data {
+    min-width: 100px;
+  }
+  
+  .crypto-volume {
+    display: none;
+  }
+  
+  .crypto-price-container {
+    margin-right: 0;
+  }
+}

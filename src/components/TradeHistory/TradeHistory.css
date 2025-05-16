@@ -1,0 +1,169 @@
+/* TradeHistory.css - 체결 내역 스타일 */
+
+.trade-history {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.trade-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.trade-history-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filter-controls {
+  display: flex;
+}
+
+.filter-button {
+  padding: 4px 10px;
+  font-size: 12px;
+  background: none;
+  border: 1px solid var(--border);
+  margin-right: 5px;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-button:last-child {
+  margin-right: 0;
+}
+
+.filter-button:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.filter-button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.filter-button:not(:first-child):not(:last-child) {
+  border-left: none;
+  border-right: none;
+}
+
+.filter-button.active {
+  background-color: var(--button-hover);
+  color: var(--primary-text);
+  font-weight: 500;
+}
+
+.trade-list-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.trade-header {
+  display: flex;
+  padding: 8px 15px;
+  font-size: 12px;
+  color: var(--secondary-text);
+  background-color: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.time-header {
+  flex: 0 0 80px;
+}
+
+.price-header {
+  flex: 1;
+}
+
+.amount-header {
+  flex: 1;
+  text-align: right;
+}
+
+.trade-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.trade-item {
+  display: flex;
+  padding: 6px 15px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.trade-item:hover {
+  background-color: var(--button-hover);
+}
+
+.trade-time {
+  flex: 0 0 80px;
+  color: var(--secondary-text);
+}
+
+.trade-price {
+  flex: 1;
+  font-weight: 500;
+}
+
+.trade-amount {
+  flex: 1;
+  text-align: right;
+}
+
+.empty-trades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .trade-history-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-controls {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .filter-button {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .trade-time {
+    flex: 0 0 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trade-item {
+    font-size: 12px;
+  }
+  
+  .trade-time {
+    flex: 0 0 50px;
+  }
+}

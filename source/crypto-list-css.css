@@ -1,0 +1,172 @@
+/* CryptoList.css - 암호화폐 목록 컴포넌트 스타일 */
+
+.crypto-list {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  max-height: calc(100vh - 200px);
+}
+
+.coin-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 15px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.coin-item:hover {
+  background-color: var(--button-hover);
+}
+
+.coin-item.active {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.coin-item-favorite {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.favorite-button:hover {
+  transform: scale(1.1);
+}
+
+.favorite-button.active {
+  color: #ffca28;
+}
+
+.coin-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.coin-name-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.coin-name {
+  font-weight: 500;
+  margin-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coin-market {
+  font-size: 12px;
+  color: var(--light-text);
+  margin-left: 4px;
+}
+
+.coin-symbol {
+  font-size: 12px;
+  color: var(--light-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coin-price-info {
+  min-width: 100px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.coin-price {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.coin-change {
+  font-size: 12px;
+}
+
+.coin-volume {
+  min-width: 70px;
+  text-align: right;
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+/* 가격 변동 색상 */
+.price-up {
+  color: var(--red-price);
+}
+
+.price-down {
+  color: var(--green-price);
+}
+
+/* 빈 리스트 상태 */
+.empty-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--light-text);
+}
+
+/* 로딩 상태 */
+.loading-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--secondary-text);
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-blue);
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+[data-theme="dark"] .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary-blue);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .coin-price-info {
+    min-width: 80px;
+    margin-right: 10px;
+  }
+  
+  .coin-volume {
+    min-width: 60px;
+  }
+  
+  .coin-item {
+    padding: 12px 10px;
+  }
+}

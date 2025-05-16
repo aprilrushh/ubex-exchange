@@ -1,0 +1,62 @@
+.indicator-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.indicator-item {
+  position: relative;
+}
+
+.indicator-button {
+  padding: 6px 12px;
+  background: var(--panel, #f9fafc);
+  border: 1px solid var(--border, #e9ecef);
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.indicator-button:hover {
+  background: var(--button-hover, #f1f3f5);
+}
+
+.indicator-button.active {
+  background: var(--primary-blue, #1261c4);
+  color: white;
+}
+
+.param-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 150px;
+  margin-top: 5px;
+  background: var(--background, white);
+  border: 1px solid var(--border, #e9ecef);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.param-button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border, #e9ecef);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.param-button:last-child {
+  border-bottom: none;
+}
+
+.param-button:hover {
+  background: var(--button-hover, #f1f3f5);
+}

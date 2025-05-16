@@ -1,0 +1,109 @@
+/* src/styles/index.css  15-05-2025 11:57pm */
+/* index.css - 기본 스타일링과 CSS 변수 */
+
+:root {
+  /* 라이트 모드 색상 */
+  --background: #ffffff;
+  --background-rgb: 255, 255, 255;
+  --panel: #f9fafc;
+  --primary-text: #333333;
+  --secondary-text: #666666;
+  --light-text: #999999;
+  --border: #e9ecef;
+  --button-hover: #f1f3f5;
+  --input-background: #ffffff;
+  
+  /* 공통 색상 */
+  --primary-blue: #1261c4;
+  --primary-blue-dark: #0d4ea6;
+  --red-price: #f75467;
+  --green-price: #0062df;
+}
+
+/* 다크 모드 색상 */
+.dark {
+  --background: #1e2233;
+  --background-rgb: 30, 34, 51;
+  --panel: #242836;
+  --primary-text: #e9ecef;
+  --secondary-text: #adb5bd;
+  --light-text: #868e96;
+  --border: #353a47;
+  --button-hover: #2a303f;
+  --input-background: #2a303f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--primary-text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* 공통 유틸리티 클래스 */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.price-up {
+  color: var(--red-price);
+}
+
+.price-down {
+  color: var(--green-price);
+}
+
+.price-neutral {
+  color: var(--primary-text);
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--panel);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-text);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-text);
+}

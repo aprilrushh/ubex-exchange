@@ -1,0 +1,725 @@
+/* TradingPage.css - UBEx 거래소 메인 페이지 스타일 */
+
+.trading-page {
+  padding: 20px;
+  height: calc(100vh - 64px);
+  background: #f8f9fa;
+}
+
+.trading-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 20px;
+  height: 100%;
+}
+
+.trading-left {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.trading-center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-container {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.order-form-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trading-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.asset-info {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.asset-info h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.asset-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.asset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.asset-item:last-child {
+  border-bottom: none;
+}
+
+.asset-item span:first-child {
+  color: #666;
+}
+
+.asset-item span:last-child {
+  font-weight: bold;
+  color: #333;
+}
+
+.trade-history-container {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 코인 상세 정보 헤더 */
+.coin-detail-header {
+  display: flex;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.symbol-section {
+  flex: 0 0 auto;
+  margin-right: 24px;
+}
+
+.coin-symbol {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.market-pair {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-text);
+  margin-left: 8px;
+}
+
+.exchange-info {
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+.exchange-name {
+  margin-right: 5px;
+}
+
+.divider {
+  margin: 0 5px;
+  color: var(--border);
+}
+
+.price-section {
+  flex: 1;
+  display: flex;
+}
+
+.current-price-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.currency {
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--secondary-text);
+  margin-left: 5px;
+}
+
+.price-change {
+  display: flex;
+  align-items: center;
+}
+
+.change-value {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.price-details {
+  flex: 1;
+  max-width: 320px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: var(--secondary-text);
+  margin-bottom: 3px;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.reference-prices {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  min-width: 220px;
+}
+
+.exchange-reference {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.exchange-price {
+  margin-right: 10px;
+  font-weight: 500;
+  min-width: 95px;
+  text-align: right;
+}
+
+.exchange-usd-price {
+  font-size: 12px;
+  color: var(--light-text);
+  min-width: 85px;
+}
+
+/* 차트 섹션 */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--panel);
+}
+
+.chart-controls {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.chart-type-selector {
+  display: flex;
+  margin: 0 20px;
+}
+
+.chart-type-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chart-type-btn.active {
+  color: white;
+  background-color: var(--primary-blue);
+}
+
+.chart-type-btn:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.chart-options {
+  display: flex;
+}
+
+.option-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  border-radius: 3px;
+  background: none;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-btn.active {
+  color: var(--primary-text);
+  background-color: var(--button-hover);
+}
+
+.option-btn:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.chart-container {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  background-color: var(--background);
+}
+
+.chart-info {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15px;
+  font-size: 12px;
+  color: var(--light-text);
+  border-top: 1px solid var(--border);
+}
+
+/* 거래 섹션 */
+.trading-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  margin: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.order-book-section,
+.order-form-section,
+.trade-history-section {
+  background-color: var(--background);
+  padding: 0;
+}
+
+/* 호가창 스타일 */
+.section-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 5px;
+  text-align: center;
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  color: var(--primary-blue);
+  font-weight: 500;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: var(--button-hover);
+}
+
+.order-book-content {
+  padding: 10px;
+}
+
+.order-table {
+  margin-bottom: 15px;
+}
+
+.order-row {
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+  position: relative;
+}
+
+.order-price {
+  width: 100px;
+  text-align: right;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.order-amount {
+  width: 80px;
+  text-align: right;
+  position: relative;
+  z-index: 2;
+}
+
+.order-bar-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.order-bar {
+  height: 80%;
+  transition: width 0.3s ease;
+}
+
+.sell-bar {
+  background-color: rgba(0, 98, 223, 0.1);
+}
+
+.buy-bar {
+  background-color: rgba(247, 84, 103, 0.1);
+}
+
+.current-price-row {
+  padding: 8px 0;
+  margin: 8px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+
+.current-market-price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.transaction-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.info-label {
+  color: var(--secondary-text);
+}
+
+.info-value {
+  font-weight: 500;
+}
+
+/* 주문 폼 스타일 */
+.order-type-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-type-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.order-type-btn.active {
+  font-weight: 600;
+}
+
+.order-type-btn.active:first-child {
+  color: var(--red-price);
+  border-bottom: 2px solid var(--red-price);
+}
+
+.order-type-btn.active:last-child {
+  color: var(--green-price);
+  border-bottom: 2px solid var(--green-price);
+}
+
+.order-form {
+  padding: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: var(--secondary-text);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--input-background);
+  color: var(--primary-text);
+}
+
+.input-suffix {
+  position: absolute;
+  right: 10px;
+  color: var(--secondary-text);
+  font-size: 13px;
+}
+
+.amount-slider {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.slider-btn {
+  padding: 6px 0;
+  width: 22%;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--background);
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slider-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.available-balance {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.balance-label {
+  color: var(--secondary-text);
+}
+
+.balance-value {
+  font-weight: 500;
+}
+
+.order-submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-btn {
+  background-color: var(--red-price);
+  color: white;
+}
+
+.buy-btn:hover {
+  background-color: #d94456;
+}
+
+.sell-btn {
+  background-color: var(--green-price);
+  color: white;
+}
+
+.sell-btn:hover {
+  background-color: #0055c4;
+}
+
+/* 체결 내역 스타일 */
+.trade-history-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  padding: 12px 15px;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+
+.trade-history-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.trade-history-headers {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--panel);
+  font-size: 12px;
+  color: var(--secondary-text);
+}
+
+.header-item {
+  flex: 1;
+  text-align: center;
+}
+
+.trade-history-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.trade-item {
+  display: flex;
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.trade-time,
+.trade-price,
+.trade-amount {
+  flex: 1;
+  text-align: center;
+}
+
+.price-up {
+  color: var(--red-price);
+}
+
+.price-down {
+  color: var(--green-price);
+}
+
+/* 로딩 상태 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-blue);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .trading-layout {
+    grid-template-columns: 250px 1fr 250px;
+  }
+  
+  .coin-detail-header {
+    flex-wrap: wrap;
+  }
+  
+  .symbol-section {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .reference-prices {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .exchange-reference {
+    margin-right: 15px;
+  }
+  
+  .trading-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .trading-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .trading-left {
+    height: 400px;
+  }
+
+  .trading-right {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-section {
+    flex-direction: column;
+  }
+  
+  .price-details {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+  
+  .chart-controls {
+    flex-wrap: wrap;
+  }
+  
+  .chart-type-selector {
+    margin: 10px 0;
+  }
+  
+  .reference-prices {
+    flex-direction: column;
+  }
+}
